@@ -9,3 +9,4 @@ if __name__ == "__main__":
 def multiplica(a, b):
     return a * b
 
+print("Hello, World!")
