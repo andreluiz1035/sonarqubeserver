@@ -1,3 +1,6 @@
-def funcao_morta():
-    print("Nunca será chamada")  # Code Smell
+def soma1(a, b):
+    return a + b
+
+def soma2(a, b):
+    return a + b
 
