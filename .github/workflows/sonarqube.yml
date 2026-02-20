@@ -1,4 +1,4 @@
-name: SonarQube Analysis
+name: sonar
 
 on:
   push:
@@ -10,8 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pytest pytest-cov
+
+      - name: Run tests with coverage
+        run: |
+          pytest --cov=src --cov-report=xml:hello_coverage/coverage.xml
 
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@v2
