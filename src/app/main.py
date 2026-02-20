@@ -10,3 +10,5 @@ def multiplica(a, b):
     return a * b
 
 print("Hello, World!")
+
+print("Hello, World!")
