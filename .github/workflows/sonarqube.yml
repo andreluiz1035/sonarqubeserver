@@ -27,7 +27,7 @@ jobs:
 
       - name: Rodar testes com coverage
         run: |
-          PYTHONPATH=. pytest --cov=src --cov-report=xml
+          PYTHONPATH=. pytest --cov=src --cov-report=coverage.xml
 
       - name: Mostrar estrutura do projeto
         run: |
@@ -38,10 +38,10 @@ jobs:
 
       - name: Verificar se coverage existe
         run: |
-          if [ -f .\coverage.xml ]; then
-            echo "Coverage file encontrado ✅"
+          if [ -f coverage.xml ]; then
+            echo "Coverage file encontrado "
           else
-            echo "Coverage file NÃO encontrado ❌"
+            echo "Coverage file NÃO encontrado "
             exit 1
           fi
 
