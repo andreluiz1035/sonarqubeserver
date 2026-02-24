@@ -11,10 +11,12 @@ jobs:
 
     steps:
       - name: Checkout código
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
@@ -27,8 +29,24 @@ jobs:
         run: |
           PYTHONPATH=. pytest --cov=src --cov-report=xml:hello_coverage/coverage.xml
 
+      - name: Mostrar estrutura do projeto
+        run: |
+          echo "==== ROOT ===="
+          ls -la
+          echo "==== RECURSIVE ===="
+          ls -R
+
+      - name: Verificar se coverage existe
+        run: |
+          if [ -f hello_coverage/coverage.xml ]; then
+            echo "Coverage file encontrado ✅"
+          else
+            echo "Coverage file NÃO encontrado ❌"
+            exit 1
+          fi
+
       - name: SonarQube Scan
-        uses: sonarsource/sonarqube-scan-action@v2
+        uses: SonarSource/sonarqube-scan-action@v2
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
