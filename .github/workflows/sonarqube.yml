@@ -38,7 +38,7 @@ jobs:
 
       - name: Verificar se coverage existe
         run: |
-          if [ -f hello_coverage/coverage.xml ]; then
+          if [ -f .\coverage.xml ]; then
             echo "Coverage file encontrado ✅"
           else
             echo "Coverage file NÃO encontrado ❌"
