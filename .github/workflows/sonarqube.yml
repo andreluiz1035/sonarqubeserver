@@ -27,7 +27,7 @@ jobs:
 
       - name: Rodar testes com coverage
         run: |
-          PYTHONPATH=. pytest --cov=src --cov-report=xml:hello_coverage/coverage.xml
+          PYTHONPATH=. pytest --cov=src --cov-report=xml
 
       - name: Mostrar estrutura do projeto
         run: |
