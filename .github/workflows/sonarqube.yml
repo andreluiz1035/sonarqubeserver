@@ -44,6 +44,12 @@ jobs:
             echo "Coverage file NÃO encontrado "
             exit 1
           fi
+      
+      - name: Mostrar conteúdo do coverage.xml
+        run: |
+            echo "==== COVERAGE XML ===="
+            cat coverage.xml 
+
 
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v2
