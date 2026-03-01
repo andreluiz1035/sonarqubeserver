@@ -1,3 +1,6 @@
+
+#Definir uma constante em vez de replicar um texto varias vezes. 
+
 def processar_dados1(a, b):
     resultado = a + b
     if resultado > 10:

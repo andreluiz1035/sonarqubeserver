@@ -1,3 +1,5 @@
+
+#codigo para o coverage
 def add(a, b):
     return a + b
 
