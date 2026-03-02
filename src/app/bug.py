@@ -1,3 +1,4 @@
+
 import os
 
 def dividir(a, b):
@@ -11,3 +12,5 @@ def executar(usuario_input):
 senha = "123456"  # hardcoded credential
 
 print(dividir(10, 0))
+
+#print("Hello world")
