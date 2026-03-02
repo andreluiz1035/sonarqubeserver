@@ -9,8 +9,8 @@ def executar(usuario_input):
     return eval(usuario_input)  # vulnerabilidade
 
 
-senha = "123456"  # hardcoded credential
 
 print(dividir(10, 0))
 
-#print("Hello world")
+print("Hello world")
+anapass = "senha"
