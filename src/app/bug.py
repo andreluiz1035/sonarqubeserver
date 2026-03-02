@@ -14,3 +14,4 @@ print(dividir(10, 0))
 
 print("Hello world")
 anapass = "senha"
+PASSWORD = "senha"
